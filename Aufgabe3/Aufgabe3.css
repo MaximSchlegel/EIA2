@@ -1,0 +1,93 @@
+/*
+Aufgabe: 3
+Name: Maxim Schlegel
+Matrikel: 257202
+Datum: 19.04.18
+	
+Hiermit versichere ich, dass ich diesen Code (in cooperation mit Daniel Kern) geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+*/
+
+@charset "UTF-8";
+
+body {
+	font-family: "Open Sans", sans-serife;
+	text-align: center;
+}
+
+#scoreboard {
+	position: fixed;
+	right: 0;
+	top: 0;
+	text-align: center;
+	width: 21%;
+	height: 100%;
+	background-color: #F4F4F4;
+}
+
+#scoreboard h2 {
+	font-size: 1.2em;
+}
+
+#scoreboard div {
+	padding-bottom: 1em;
+}
+
+#game {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 79%;
+	height: 100%;
+	background-color: #5F5F5F;
+}
+
+#game h2 {
+	padding: 1%;
+	color: #F4F4F4;
+}
+
+.card {
+	width: 7em;
+	height: 7em;
+	text-align: center;
+	float: left;
+	margin: 1%;
+	border-radius: 0.7em;
+	line-height: 7em;
+	font-weight: bold;
+	background-color: #BDB76B;
+}
+
+#cardBox {
+	position: relative;
+  	height: auto;
+  	width: 100%;
+  	display: flex;
+ 	justify-content: center;
+  	flex-wrap: wrap;
+  	margin-bottom: 2em;
+}
+
+.open{
+	background-color: #BDB76B;
+	color: #232323;
+}
+
+.open p{
+	margin: auto;
+}
+
+.taken{
+	background-color: rgba(238, 232, 170, 0.2);
+	color: rgba(238, 232, 170, 0);
+}
+
+.hidden{
+	background-color: #b0b0b0;
+	cursor: pointer;
+}
+
+.hidden p {
+	display: none;
+
+}
