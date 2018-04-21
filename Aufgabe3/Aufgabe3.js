@@ -1,5 +1,13 @@
-var Aufgabe2;
-(function (Aufgabe2) {
+/*
+Aufgabe: 3
+Name: Maxim Schlegel
+Matrikel: 257202
+Datum: 19.04.18
+    
+Hiermit versichere ich, dass ich diesen Code (in cooperation mit Daniel Kern) geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+*/
+var Aufgabe3;
+(function (Aufgabe3) {
     var numPairs;
     var cardContent = ["A", "B", "C", "D", "E", "F", "G", "H"];
     var cardArray = [];
@@ -25,8 +33,8 @@ var Aufgabe2;
                     cardsOpenArray.push(target);
                 }
             }
-            else if (cardsOpen == 2) {
-                setTimeout(compareCards(), 2000);
+            if (cardsOpen == 2) {
+                setTimeout(compareCards, 2000);
             }
         }
     }
@@ -77,5 +85,5 @@ var Aufgabe2;
         }
     }
     document.addEventListener("DOMContentLoaded", main);
-})(Aufgabe2 || (Aufgabe2 = {}));
+})(Aufgabe3 || (Aufgabe3 = {}));
 //# sourceMappingURL=Aufgabe3.js.map
