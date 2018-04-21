@@ -1,63 +1,53 @@
 namespace Aufgabe2 {
 
-namespace Aufgabe2 {
-
 let numPairs: number;
 let numPlayers: number = 1;
 let cardContent: string[] = ["A", "B", "C", "D", "E", "F", "G", "H"];
 let cardArray: HTMLElement[] = [];
-      
-class Card {
-    cardContent: string;
-    cardStatus: string;
-    card: HTMLElement;
-      
-    constructor (_cardContent: string) {
-        this.cardContent = _cardContent;
-        let randomStatus: number = Math.random() * 11;
+            
+function randomStatus(): string {
+    let randomStatus: number = Math.random() * 11;
                 
-        if (randomStatus <= 4) {
-            this.cardStatus = "hidden";
-            }
-        else if (randomStatus > 4 && randomStatus <= 6) {
-            this.cardStatus = "taken"; 
-            }
-        else if (randomStatus > 6) {
-            this.cardStatus = "open";
+    if (randomStatus <= 4) {
+        return "hidden";
+        }
+    else if (randomStatus > 4 && randomStatus <= 6) {
+        return "taken"; 
+        }
+    else if (randomStatus > 6) {
+        return "open";
         }
     }
+
          
-    createCard(): HTMLElement[] {
-        this.card = document.createElement("div");
-        this.card.innerText = this.cardContent;
-        this.card.setAttribute("class", "card " + this.cardStatus);
-        cardArray.push(this.card);
-        return cardArray;
-    }
+function createCard(_cardContent: string, _status: string): void {
+    let card: HTMLElement = document.createElement("div");
+    card.innerText = _cardContent;
+    card.setAttribute("class", "card " + _status);
+    cardArray.push(card); 
 }
 
-    function shuffleArray(_array: any[]): any[] {
+
+function shuffleArray(_array: any[]): any[] {
     for (var i: number = _array.length - 1; i > 0; i--) {
         var j: number = Math.floor(Math.random() * (i + 1));
         var temp: number = _array[i];
         _array[i] = _array[j];
         _array[j] = temp;
-    }
+        }
     return _array;
 }
 
 function main(): void {
-    numPairs = parseInt(prompt("How many card pairs?", "5-8"), 10);
+    numPairs = parseInt(prompt("Anzahl der Kartenpaare", "5-8"), 10);
     if (numPairs < 5 || numPairs > 8) { 
         numPairs = 8;
-    }
+        }
+    
     for (let i: number = 0; i < numPairs; i++) {
-        let card: Card = new Card(cardContent[i]);
-        card.createCard();
-
-        let pair: Card = new Card(cardContent[i]);
-        pair.createCard();
-    }
+        createCard(cardContent[i], randomStatus());
+        createCard(cardContent[i], randomStatus());
+        }
     shuffleArray(cardArray);
     
     for (let i: number = 0; i < cardArray.length; i++) {
@@ -104,5 +94,4 @@ function main(): void {
         } 
     }
 document.addEventListener("DOMContentLoaded", main);
-    }   
 }

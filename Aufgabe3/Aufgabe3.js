@@ -1,27 +1,28 @@
 var Aufgabe2;
 (function (Aufgabe2) {
     var numPairs;
-    var numPlayers = 1;
     var cardContent = ["A", "B", "C", "D", "E", "F", "G", "H"];
     var cardArray = [];
-    var cardOpenArray = [];
-    var status = "hidden";
     var cardsOpen = 0;
-    function createCard(_cardContent, _status) {
+    var cardsOpenArray = [];
+    var checkRest = [];
+    function createCard(_cardContent) {
         var card = document.createElement("div");
         card.innerHTML = "<p>" + _cardContent + "</p>";
         card.setAttribute("class", "card hidden");
         cardArray.push(card);
+        checkRest.push(card);
         card.addEventListener("click", clickHandler);
     }
     function clickHandler(_event) {
         var target = _event.target;
         if (target.classList.contains("card")) {
             cardsOpen++;
-            if (cardsOpen <= 2) {
+            if (!(cardsOpen > 2)) {
                 if (target.classList.contains("hidden")) {
                     target.classList.remove("hidden");
                     target.classList.add("open");
+                    cardsOpenArray.push(target);
                 }
             }
             else if (cardsOpen == 2) {
@@ -30,18 +31,28 @@ var Aufgabe2;
         }
     }
     function compareCards() {
-        for (var i = 0; i < 2; i++) {
-            if (cardOpenArray[0].innerHTML == cardOpenArray[1].innerHTML) {
-                cardOpenArray[i].classList.remove("hidden");
-                cardOpenArray[i].classList.add("taken");
+        if (cardsOpenArray[0].innerHTML == cardsOpenArray[1].innerHTML) {
+            for (var i = 0; i < 2; i++) {
+                cardsOpenArray[i].classList.remove("open");
+                cardsOpenArray[i].classList.add("taken");
             }
-            else {
-                cardOpenArray[i].classList.remove("open");
-                cardOpenArray[i].classList.add("hidden");
+            checkRest.splice(0, 2);
+        }
+        else {
+            for (var i = 0; i < cardsOpenArray.length; i++) {
+                cardsOpenArray[i].classList.remove("open");
+                cardsOpenArray[i].classList.add("hidden");
             }
         }
+        cardsOpenArray = [];
+        cardsOpen = 0;
+        checkWin();
     }
-    console.log(cardOpenArray);
+    function checkWin() {
+        if (checkRest.length == 0) {
+            alert("Herzlichen Gl\u00fcckwunsch!");
+        }
+    }
     function shuffleArray(_array) {
         for (var i = _array.length - 1; i > 0; i--) {
             var j = Math.floor(Math.random() * (i + 1));
@@ -57,8 +68,8 @@ var Aufgabe2;
             numPairs = 8;
         }
         for (var i = 0; i < numPairs; i++) {
-            createCard(cardContent[i], status);
-            createCard(cardContent[i], status);
+            createCard(cardContent[i]);
+            createCard(cardContent[i]);
         }
         shuffleArray(cardArray);
         for (var i = 0; i < cardArray.length; i++) {
