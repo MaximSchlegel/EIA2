@@ -9,7 +9,7 @@ Hiermit versichere ich, dass ich diesen Code (in cooperation mit Daniel Kern) ge
 var Aufgabe3;
 (function (Aufgabe3) {
     var numPairs;
-    var cardContent = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    var cardContent = ["<img src=../Icon/air.png>", "<img src=../Icon/blood.png>", "<img src=../Icon/combustion.png>", "<img src=../Icon/earth.png>", "<img src=../Icon/fire.png>", "<img src=../Icon/lightning.png>", "<img src=../Icon/plant.png>", "<img src=../Icon/water.png>"];
     var cardArray = [];
     var cardsOpen = 0;
     var cardsOpenArray = [];
