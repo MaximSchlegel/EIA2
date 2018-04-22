@@ -88,6 +88,7 @@ body {
 }
 
 .hidden{
+	background: url(../Icon/neutral.png) no-repeat center;
 	background-color: #cbc6a5;
 	cursor: pointer;
 }
