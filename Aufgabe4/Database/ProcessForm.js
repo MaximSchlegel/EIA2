@@ -1,3 +1,11 @@
+/*
+Aufgabe: 4
+Name: Maxim Schlegel
+Matrikel: 257202
+Datum: 02.05.18
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+*/
 var L04_Interfaces;
 (function (L04_Interfaces) {
     window.addEventListener("load", init);
