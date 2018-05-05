@@ -1,0 +1,178 @@
+/*
+Aufgabe: 4
+Name: Maxim Schlegel
+Matrikel: 257202
+Datum: 03.05.18
+	
+Hiermit versichere ich, dass ich diesen Code (in cooperation mit Daniel Kern) geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+*/
+
+@charset "UTF-8";
+
+body {
+	font-family: "Open Sans", sans-serife;
+	text-align: center;
+}
+
+h2 {
+	margin: auto;
+	margin-bottom: 0.5em;
+	margin-top: 0.5em;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+#startMenu {
+	display: block;
+}
+
+#addPlayer, #removePlayer {
+	margin: 0em 0.5em 0.7em 0.5em;
+    border: 2px solid white;
+    color: #333333;
+    background-color: #F5F5F5;
+    padding: 0.6em 0.75em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2em;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+}
+
+#addPlayer:Hover {
+	background-color: white;
+	border: 2px solid #4CAF50;
+	-webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+}
+
+#removePlayer:Hover {
+	background-color: white;
+	border: 2px solid #f44336;
+	-webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+}
+
+#playerName input {
+	display: block;
+	justify-content: center;
+  	flex-wrap: wrap;
+  	width: 20%;
+  	margin: auto;
+  	margin-bottom: 0.8em;
+  	text-align: center;
+}
+
+#sliderNumPair {
+	margin-bottom: 1em;
+}
+
+#sliderBox {
+	margin-top: 1em;
+	width: 20%;
+}
+
+#start {
+	color: #333333;
+	text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2em;
+    border: none;
+    padding: 0.6em 0.8em;
+    background-color: #F5F5F5;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+}
+
+#start:hover {
+	font-size: 1.4em;
+	-webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    background-color: #D4D4D4; 
+}
+
+#scoreboard {
+	padding-top: 0.5em;
+	position: fixed;
+	right: 0;
+	top: 0;
+	text-align: center;
+	width: 21%;
+	height: 100%;
+	background-color: #F4F4F4;
+	display: none;
+}
+
+#scoreboard h2 {
+	font-size: 1.2em;
+}
+
+#scoreboard div {
+	padding-bottom: 1em;
+}
+
+#game {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 79%;
+	height: 100%;
+	background-color: #5F5F5F;
+	overflow: auto;
+	display: none;
+}
+
+#game h2 {
+	padding: 1%;
+	color: #F4F4F4;
+}
+
+.card {
+	width: 5em;
+	height: 5em;
+	text-align: center;
+	float: left;
+	margin: 1%;
+	border-radius: 0.7em;
+	font-weight: bold;
+	background-color: #BDB76B;
+	font-size: 2em;
+}
+
+.card p {
+	padding-top: 0.8em;
+}
+
+#cardBox {
+	position: relative;
+  	height: auto;
+  	width: 100%;
+  	display: flex;
+ 	justify-content: center;
+  	flex-wrap: wrap;
+  	margin-bottom: 2em;
+}
+
+.open{
+	background-color: #e9e9e9;
+}
+
+.taken {
+	background-color: rgba(100, 100, 100, 0.75);
+}
+
+.taken p {
+	display: none;
+}
+
+.hidden{
+	background: url(../Icon/neutral.png) no-repeat center;
+	background-color: #cbc6a5;
+	cursor: pointer;
+}
+
+.hidden p {
+	display: none;
+}

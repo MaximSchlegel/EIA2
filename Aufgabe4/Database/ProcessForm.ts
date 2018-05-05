@@ -72,7 +72,6 @@ namespace L04_Interfaces {
             else {
             output2.value = "No Match";
             }
-         
         }
     
         // zusätzliche Konsolenausgaben zur Demonstration
