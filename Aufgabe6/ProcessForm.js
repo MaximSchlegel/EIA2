@@ -9,7 +9,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 var Aufgabe6;
 (function (Aufgabe6) {
     window.addEventListener("load", init);
-    var address = "https://eia2-node-danielkern.herokuapp.com";
+    var address = "https://eia2-maximschlegel.herokuapp.com";
     var inputs = document.getElementsByTagName("input");
     function init(_event) {
         console.log("Init");
