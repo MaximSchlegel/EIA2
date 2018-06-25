@@ -8,28 +8,6 @@ Hiermit versichere ich, dass ich diesen Code selber geschrieben habe. Er wurde n
 */
 var aufgabe10;
 (function (aufgabe10) {
-    var Fish = (function () {
-        function Fish() {
-        }
-        Fish.prototype.move = function () {
-            this.x += +1.2;
-            if (this.x > 860) {
-                this.x = -150;
-            }
-        };
-        Fish.prototype.draw = function () {
-            aufgabe10.crc2.beginPath();
-            aufgabe10.crc2.moveTo(this.x, this.y);
-            aufgabe10.crc2.bezierCurveTo(this.x + 120, this.y + 110, this.x + 130, this.y + -70, this.x, this.y + 40);
-            aufgabe10.crc2.lineTo(this.x, this.y);
-            aufgabe10.crc2.fillStyle = "rgb(" + this.r + "," + this.g + "," + this.b + ")";
-            aufgabe10.crc2.fill();
-            aufgabe10.crc2.closePath();
-            aufgabe10.crc2.stroke();
-        };
-        return Fish;
-    }());
-    aufgabe10.Fish = Fish;
     var Bubbles = (function () {
         function Bubbles() {
         }
@@ -52,4 +30,4 @@ var aufgabe10;
     }());
     aufgabe10.Bubbles = Bubbles;
 })(aufgabe10 || (aufgabe10 = {}));
-//# sourceMappingURL=Classes10.js.map
+//# sourceMappingURL=Bubble10.js.map
