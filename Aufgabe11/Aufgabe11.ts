@@ -65,7 +65,7 @@ namespace Aufgabe11 {
             }
         }
     }
-
+    
     function animate(): void {
         window.setTimeout(animate, 10);
 
