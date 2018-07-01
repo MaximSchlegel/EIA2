@@ -1,3 +1,11 @@
+/*
+Aufgabe: 11
+Name: Maxim Schlegel
+Matrikel: 257202
+Datum: 01.07.18
+    
+Hiermit versichere ich, dass ich diesen Code selber geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+*/
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -9,7 +17,7 @@ var Aufgabe11;
         __extends(Food, _super);
         function Food() {
             _super.call(this);
-            this.border = Math.random() * (360 - 290) + 290;
+            this.border = Math.random() * (360 - 335) + 430;
         }
         Food.prototype.color = function () {
             this.r = 222;
@@ -28,6 +36,7 @@ var Aufgabe11;
             Aufgabe11.crc2.closePath();
             Aufgabe11.crc2.fillStyle = "rgb(" + this.r + "," + this.g + "," + this.b + ")";
             Aufgabe11.crc2.fill();
+            Aufgabe11.crc2.stroke();
         };
         return Food;
     }(Aufgabe11.MovingObjects));

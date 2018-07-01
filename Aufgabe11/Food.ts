@@ -1,10 +1,19 @@
+/*
+Aufgabe: 11
+Name: Maxim Schlegel
+Matrikel: 257202
+Datum: 01.07.18
+    
+Hiermit versichere ich, dass ich diesen Code selber geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+*/
+
 namespace Aufgabe11 {
     export class Food extends MovingObjects {
         border: number;
 
         constructor() {
             super();
-            this.border = Math.random() * (360 - 290) + 290;
+            this.border = Math.random() * (360 - 335    ) + 430;
         }
 
         color(): void {
@@ -27,6 +36,7 @@ namespace Aufgabe11 {
             crc2.closePath();
             crc2.fillStyle = "rgb(" + this.r + "," + this.g + "," + this.b + ")";
             crc2.fill();
+            crc2.stroke();
         }
     }
 }

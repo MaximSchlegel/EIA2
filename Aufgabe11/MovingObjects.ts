@@ -1,3 +1,12 @@
+/*
+Aufgabe: 11
+Name: Maxim Schlegel
+Matrikel: 257202
+Datum: 01.07.18
+    
+Hiermit versichere ich, dass ich diesen Code selber geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+*/
+
 namespace Aufgabe11 {
     export class MovingObjects {
         x: number;
@@ -12,15 +21,19 @@ namespace Aufgabe11 {
         }
         
         position(): void {
+            //placeholder
         }
         
-        color(): void { 
+        color(): void {
+            //placeholder
         }
         
         move(): void {
+            //placeholder
         }
         
         draw(): void {
+            //placeholder
         }
     }
 }

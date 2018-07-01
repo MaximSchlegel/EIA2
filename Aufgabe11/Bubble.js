@@ -36,8 +36,8 @@ var Aufgabe11;
         Bubbles.prototype.draw = function () {
             Aufgabe11.crc2.beginPath();
             Aufgabe11.crc2.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
-            //crc2.fillStyle = "rgb(" + this.r + "," + this.g + "," + this.b + ")"; // "rgba(175,238,238, 0.25)";
-            //crc2.fill();
+            Aufgabe11.crc2.fillStyle = "rgba(175,238,238, 0.25)";
+            Aufgabe11.crc2.fill();
             Aufgabe11.crc2.closePath();
             Aufgabe11.crc2.strokeStyle = "rgb(" + this.r + "," + this.g + "," + this.b + ")";
             Aufgabe11.crc2.stroke();

@@ -25,7 +25,7 @@ namespace Aufgabe11 {
         }
         
         move(): void {
-            this.x += + 1.2;
+            this.x += 1.2;
 
             if (this.x > 860) {
                 this.x = -150;
@@ -40,6 +40,7 @@ namespace Aufgabe11 {
             crc2.fillStyle = "rgb(" + this.r + "," + this.g + "," + this.b + ")";
             crc2.fill();
             crc2.closePath();
+            crc2.stroke();
         }
     }
 }

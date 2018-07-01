@@ -36,8 +36,8 @@ namespace Aufgabe11 {
         draw(): void {
             crc2.beginPath();
             crc2.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
-            //crc2.fillStyle = "rgb(" + this.r + "," + this.g + "," + this.b + ")"; // "rgba(175,238,238, 0.25)";
-            //crc2.fill();
+            crc2.fillStyle = "rgba(175,238,238, 0.25)";
+            crc2.fill();
             crc2.closePath();
             crc2.strokeStyle = "rgb(" + this.r + "," + this.g + "," + this.b + ")";
             crc2.stroke();
