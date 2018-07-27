@@ -35,17 +35,19 @@ var Abschlussaufgabe;
             objects[i].draw();
         }
     }
+    // Track mouse movement
     window.addEventListener("mousemove", function (event) {
         var mouseX = event.screenX;
         var mouseY = event.screenY;
         mouseX = event.x;
         mouseY = event.y;
-        console.log("X: " + mouseX);
-        console.log("Y: " + mouseY);
         for (var i = 0; i < objects.length; i++) {
             objects[i].mouseMove(mouseX, mouseY);
         }
+        //console.log("X: " + mouseX);
+        //console.log("Y: " + mouseY);
     });
+    // Adjusts canvas even after resizing your window
     window.addEventListener("resize", function (event) {
         Abschlussaufgabe.crc2.canvas.width = window.innerWidth;
         Abschlussaufgabe.crc2.canvas.height = window.innerHeight;

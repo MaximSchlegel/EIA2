@@ -15,6 +15,7 @@ namespace Abschlussaufgabe {
         r: number;
         maxR: number;
         minR: number;
+        randomColor: string;
         
         constructor() {
             super();
@@ -31,7 +32,8 @@ namespace Abschlussaufgabe {
             this.dx = (Math.random() - 0.5) * 3;
             this.dy = (Math.random() - 0.5) * 3;
         }
-
+        
+        // Circles are bouncing away from border
         move(): void {
             if (this.x + this.r > innerWidth || this.x - this.r < 0) {
                 this.dx = -this.dx;
@@ -45,10 +47,9 @@ namespace Abschlussaufgabe {
             this.y += this.dy;
         }
 
-        // Interactivity
+        // Interactivity with mouse movement: Circles get bigger if close to the cursor
         mouseMove(mouseX: number, mouseY: number): void {
             if (mouseX - this.x < 70 && mouseX - this.x > - 70 && mouseY - this.y < 70 && mouseY - this.y > - 70) {
-                console.log("Test");
                 if (this.r < this.maxR) {
                     this.r += 1.85;
                 }
@@ -61,15 +62,24 @@ namespace Abschlussaufgabe {
         draw(): void {
             crc2.beginPath();
             crc2.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
-            let grad = crc2.createLinearGradient(400, 300, 410, 480);
-            grad.addColorStop(0, "#FFFACD");
-            grad.addColorStop(0.5, "#F0E68C");
-            grad.addColorStop(1, "#BDB76B");
-            crc2.fillStyle = grad;
+            
+            let grad1 = crc2.createLinearGradient(400, 300, 410, 480);
+            grad1.addColorStop(0, "#FFFACD");
+            grad1.addColorStop(0.5, "#F0E68C");
+            grad1.addColorStop(1, "#BDB76B");
+            
+            let grad2 = crc2.createLinearGradient(440, 250, 450, 430);
+            grad2.addColorStop(0, "#F2C5CA");
+            grad2.addColorStop(0.5, "#F1A9BB");
+            grad2.addColorStop(1, "#DB86A9");
+            
+            let grad3 = crc2.createLinearGradient(640, 150, 650, 700);
+            grad3.addColorStop(0, "#B5D3DB");
+            grad3.addColorStop(0.5, "#5A8DAB");
+            grad3.addColorStop(1, "#283143");
+            
+            crc2.fillStyle = grad1;
             crc2.fill();
-            crc2.lineWidth = 3;
-            crc2.strokeStyle = "black";
-            crc2.stroke;
         }
     }
 }
