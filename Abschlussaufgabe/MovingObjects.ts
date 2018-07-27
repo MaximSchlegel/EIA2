@@ -9,7 +9,7 @@ Hiermit versichere ich, dass ich diesen Code selber geschrieben habe. Er wurde n
 
 namespace Abschlussaufgabe {
     export class MovingObjects {
-        // Draw position (x, x) | velocity (dx, dy) | radius (r) | max. radius (MaxR) | min. radius (minR)
+        // Draw position (x, y)
         x: number;
         y: number;
 
@@ -26,6 +26,10 @@ namespace Abschlussaufgabe {
         }
 
         draw(): void {
+            // placeholder
+        }
+
+        mouseMove(mouseX: number, mouseY: number): void {
             // placeholder
         }
     }

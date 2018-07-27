@@ -19,15 +19,15 @@ var Abschlussaufgabe;
             _super.call(this);
         }
         Circle.prototype.position = function () {
-            this.r = Math.random() * 8 + 3;
-            this.maxR = 40;
-            this.minR = 5;
+            this.r = Math.random() * 10 + 2;
+            this.maxR = 80;
+            this.minR = this.r;
             // Circles spawn inside the canvas and can't spawn on the border
             this.x = Math.random() * (innerWidth - this.r * 2) + this.r;
             this.y = Math.random() * (innerHeight - this.r * 2) + this.r;
             // Change velocity of circles
-            this.dx = (Math.random() - 0.5) * 2;
-            this.dy = (Math.random() - 0.5) * 2;
+            this.dx = (Math.random() - 0.5) * 3;
+            this.dy = (Math.random() - 0.5) * 3;
         };
         Circle.prototype.move = function () {
             if (this.x + this.r > innerWidth || this.x - this.r < 0) {
@@ -38,17 +38,18 @@ var Abschlussaufgabe;
             }
             this.x += this.dx;
             this.y += this.dy;
-            // Interactivity
-            if (this.mouseX - this.x < 50 && this.mouseX - this.x > -50 && this.mouseY - this.y < 50 && this.mouseY - this.y > -50) {
-                if (this.maxR < 40) {
-                    this.r += 1;
+        };
+        // Interactivity
+        Circle.prototype.mouseMove = function (mouseX, mouseY) {
+            if (mouseX - this.x < 70 && mouseX - this.x > -70 && mouseY - this.y < 70 && mouseY - this.y > -70) {
+                console.log("Test");
+                if (this.r < this.maxR) {
+                    this.r += 1.85;
                 }
             }
             else if (this.r > this.minR) {
-                this.r -= 1;
+                this.r -= 1.85;
             }
-            //console.log("X: " + this.mouseX);
-            //console.log("Y: " + this.mouseY);
         };
         Circle.prototype.draw = function () {
             Abschlussaufgabe.crc2.beginPath();
@@ -57,9 +58,11 @@ var Abschlussaufgabe;
             grad.addColorStop(0, "#FFFACD");
             grad.addColorStop(0.5, "#F0E68C");
             grad.addColorStop(1, "#BDB76B");
-            Abschlussaufgabe.crc2.lineWidth = 2;
-            Abschlussaufgabe.crc2.strokeStyle = grad;
-            Abschlussaufgabe.crc2.stroke();
+            Abschlussaufgabe.crc2.fillStyle = grad;
+            Abschlussaufgabe.crc2.fill();
+            Abschlussaufgabe.crc2.lineWidth = 3;
+            Abschlussaufgabe.crc2.strokeStyle = "black";
+            Abschlussaufgabe.crc2.stroke;
         };
         return Circle;
     }(Abschlussaufgabe.MovingObjects));

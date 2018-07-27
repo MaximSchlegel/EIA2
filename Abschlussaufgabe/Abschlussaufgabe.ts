@@ -11,7 +11,6 @@ namespace Abschlussaufgabe {
     window.addEventListener("load", init);
     export let crc2: CanvasRenderingContext2D;
     let objects: MovingObjects[] = [];
-    let mouseMov: MovingObjects[] = [];
 
     // Init function
     function init(_event: Event): void {
@@ -23,7 +22,7 @@ namespace Abschlussaufgabe {
         crc2.canvas.height = window.innerHeight;
 
         // Generate circles
-        for (let i: number = 0; i < 250; i++) {
+        for (let i: number = 0; i < 800; i++) {
             let circle: Circle = new Circle();
             objects.push(circle);
         }
@@ -45,12 +44,19 @@ namespace Abschlussaufgabe {
     }
 
     window.addEventListener("mousemove", function(event) {
-        var mouseX: any = event.screenX;
-        var mouseY: any = event.screenY;
+        var mouseX: number = event.screenX;
+        var mouseY: number = event.screenY;
         mouseX = event.x;
         mouseY = event.y;
-        //console.log("X: " + mouseX);
-        //console.log("Y: " + mouseY);
-    })
-    console.log(objects);
+        console.log("X: " + mouseX);
+        console.log("Y: " + mouseY);
+        for (let i: number = 0; i < objects.length; i++) {
+            objects[i].mouseMove(mouseX, mouseY);
+        }
+    });
+
+    window.addEventListener("resize", function(event) {
+        crc2.canvas.width = window.innerWidth;
+        crc2.canvas.height = window.innerHeight;
+    });
 }

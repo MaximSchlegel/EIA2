@@ -9,26 +9,27 @@ Hiermit versichere ich, dass ich diesen Code selber geschrieben habe. Er wurde n
 
 namespace Abschlussaufgabe {
     export class Circle extends MovingObjects {
-        maxR: number;
-        minR: number;
+        // velocity (dx, dy) | radius (r) | max. radius (MaxR) | min. radius (minR)
         dx: number;
         dy: number;
         r: number;
+        maxR: number;
+        minR: number;
         
         constructor() {
             super();
         }
 
         position(): void {
-            this.r = Math.random() * 8 + 3;
-            this.maxR = 40;
-            this.minR = 5;
+            this.r = Math.random() * 10 + 2;
+            this.maxR = 80;
+            this.minR = this.r;
             // Circles spawn inside the canvas and can't spawn on the border
             this.x = Math.random() * (innerWidth - this.r * 2) + this.r;
             this.y = Math.random() * (innerHeight - this.r * 2) + this.r;
             // Change velocity of circles
-            this.dx = (Math.random() - 0.5) * 2;
-            this.dy = (Math.random() - 0.5) * 2;
+            this.dx = (Math.random() - 0.5) * 3;
+            this.dy = (Math.random() - 0.5) * 3;
         }
 
         move(): void {
@@ -42,18 +43,19 @@ namespace Abschlussaufgabe {
 
             this.x += this.dx;
             this.y += this.dy;
+        }
 
-            // Interactivity
-            if (this.mouseX - this.x < 50 && this.mouseY - this.x > -50 && this.mouseY - this.y < 50 && this.mouseY - this.y > -50) {
-                if (this.maxR < 40) {
-                    this.r += 1;
+        // Interactivity
+        mouseMove(mouseX: number, mouseY: number): void {
+            if (mouseX - this.x < 70 && mouseX - this.x > - 70 && mouseY - this.y < 70 && mouseY - this.y > - 70) {
+                console.log("Test");
+                if (this.r < this.maxR) {
+                    this.r += 1.85;
                 }
             }
             else if (this.r > this.minR) {
-                this.r -= 1;
+                this.r -= 1.85;
             }
-            //console.log("X: " + this.mouseX);
-            //console.log("Y: " + this.mouseY);
         }
 
         draw(): void {
@@ -63,9 +65,11 @@ namespace Abschlussaufgabe {
             grad.addColorStop(0, "#FFFACD");
             grad.addColorStop(0.5, "#F0E68C");
             grad.addColorStop(1, "#BDB76B");
-            crc2.lineWidth = 2;
-            crc2.strokeStyle = grad;
-            crc2.stroke();
+            crc2.fillStyle = grad;
+            crc2.fill();
+            crc2.lineWidth = 3;
+            crc2.strokeStyle = "black";
+            crc2.stroke;
         }
     }
 }

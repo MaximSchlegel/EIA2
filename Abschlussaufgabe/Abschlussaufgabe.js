@@ -10,7 +10,6 @@ var Abschlussaufgabe;
 (function (Abschlussaufgabe) {
     window.addEventListener("load", init);
     var objects = [];
-    var mouseMov = [];
     // Init function
     function init(_event) {
         var canvas = document.getElementsByTagName("canvas")[0];
@@ -19,7 +18,7 @@ var Abschlussaufgabe;
         Abschlussaufgabe.crc2.canvas.width = window.innerWidth;
         Abschlussaufgabe.crc2.canvas.height = window.innerHeight;
         // Generate circles
-        for (var i = 0; i < 250; i++) {
+        for (var i = 0; i < 800; i++) {
             var circle = new Abschlussaufgabe.Circle();
             objects.push(circle);
         }
@@ -41,9 +40,15 @@ var Abschlussaufgabe;
         var mouseY = event.screenY;
         mouseX = event.x;
         mouseY = event.y;
-        //console.log("X: " + mouseX);
-        //console.log("Y: " + mouseY);
+        console.log("X: " + mouseX);
+        console.log("Y: " + mouseY);
+        for (var i = 0; i < objects.length; i++) {
+            objects[i].mouseMove(mouseX, mouseY);
+        }
     });
-    console.log(objects);
+    window.addEventListener("resize", function (event) {
+        Abschlussaufgabe.crc2.canvas.width = window.innerWidth;
+        Abschlussaufgabe.crc2.canvas.height = window.innerHeight;
+    });
 })(Abschlussaufgabe || (Abschlussaufgabe = {}));
 //# sourceMappingURL=Abschlussaufgabe.js.map

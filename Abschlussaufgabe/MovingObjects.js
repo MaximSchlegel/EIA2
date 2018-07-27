@@ -21,6 +21,9 @@ var Abschlussaufgabe;
         MovingObjects.prototype.draw = function () {
             // placeholder
         };
+        MovingObjects.prototype.mouseMove = function (mouseX, mouseY) {
+            // placeholder
+        };
         return MovingObjects;
     }());
     Abschlussaufgabe.MovingObjects = MovingObjects;
