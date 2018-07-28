@@ -58,7 +58,7 @@ namespace Abschlussaufgabe {
     });
 
     // Track touch movement
-    window.addEventListener("touchmove", function(touchEvent) {
+    window.addEventListener("touchmove", function(event) {
         let touchX: number = event.screenX;
         let touchY: number = event.screenY;
         touchX = event.x;
