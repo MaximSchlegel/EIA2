@@ -9,6 +9,7 @@ Hiermit versichere ich, dass ich diesen Code selber geschrieben habe. Er wurde n
 
 namespace Abschlussaufgabe {
     export class MovingObjects {
+        
         // Draw position (x, y)
         x: number;
         y: number;

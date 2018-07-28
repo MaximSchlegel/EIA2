@@ -14,7 +14,7 @@ var Abschlussaufgabe;
     function init(_event) {
         var canvas = document.getElementsByTagName("canvas")[0];
         Abschlussaufgabe.crc2 = canvas.getContext("2d");
-        // Canvas size = Window size
+        // Canvas size = window size
         Abschlussaufgabe.crc2.canvas.width = window.innerWidth;
         Abschlussaufgabe.crc2.canvas.height = window.innerHeight;
         // Generate circles
@@ -44,8 +44,8 @@ var Abschlussaufgabe;
             for (var i = 0; i < objects.length; i++) {
                 objects[i].touchMove(touchX, touchY);
             }
-            console.log("X: " + touchX);
-            console.log("Y: " + touchY);
+            //console.log("X: " + touchX);
+            //console.log("Y: " + touchY);
         });
         // Animate Circles
         function animate() {

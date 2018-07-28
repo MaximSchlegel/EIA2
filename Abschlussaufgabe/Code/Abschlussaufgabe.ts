@@ -18,7 +18,7 @@ namespace Abschlussaufgabe {
         var canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
         crc2 = canvas.getContext("2d");
 
-        // Canvas size = Window size
+        // Canvas size = window size
         crc2.canvas.width = window.innerWidth;
         crc2.canvas.height = window.innerHeight;
 
@@ -51,8 +51,8 @@ namespace Abschlussaufgabe {
             for (let i: number = 0; i < objects.length; i++) {
                 objects[i].touchMove(touchX, touchY);
             }
-            console.log("X: " + touchX);
-            console.log("Y: " + touchY);
+            //console.log("X: " + touchX);
+            //console.log("Y: " + touchY);
         });
 
         // Animate Circles
