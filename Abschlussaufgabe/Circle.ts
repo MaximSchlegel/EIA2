@@ -15,27 +15,26 @@ namespace Abschlussaufgabe {
         r: number;
         maxR: number;
         minR: number;
-        randomColor: string;
-        
+
         constructor() {
             super();
         }
 
         position(): void {
-            // Random radius of circles
+            // Random radius of circles with minimum and maximum radius
             this.r = Math.random() * 10 + 2;
             this.maxR = 80;
             this.minR = this.r;
-            
+
             // Circles spawn inside the canvas and can't spawn on the border
             this.x = Math.random() * (innerWidth - this.r * 2) + this.r;
             this.y = Math.random() * (innerHeight - this.r * 2) + this.r;
-            
+
             // Change velocity of circles
             this.dx = (Math.random() - 0.5) * 3;
             this.dy = (Math.random() - 0.5) * 3;
         }
-        
+
         // Circles are bouncing away from border
         move(): void {
             if (this.x + this.r > innerWidth || this.x - this.r < 0) {
@@ -54,23 +53,35 @@ namespace Abschlussaufgabe {
         mouseMove(mouseX: number, mouseY: number): void {
             if (mouseX - this.x < 70 && mouseX - this.x > - 70 && mouseY - this.y < 70 && mouseY - this.y > - 70) {
                 if (this.r < this.maxR) {
-                    this.r += 1.85;
+                    this.r += 2;
                 }
             }
             else if (this.r > this.minR) {
-                this.r -= 1.85;
+                this.r -= 2;
+            }
+        }
+
+        // Interactivity with touch movement
+        touchMove(touchX: number, touchY: number): void {
+            if (touchX - this.x < 70 && touchX - this.x > - 70 && touchY - this.y < 70 && touchY - this.y > - 70) {
+                if (this.r < this.maxR) {
+                    this.r += 2;
+                }
+            }
+            else if (this.r > this.minR) {
+                this.r -= 2;
             }
         }
 
         draw(): void {
             crc2.beginPath();
             crc2.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
-            
-            let grad1 = crc2.createLinearGradient(400, 300, 410, 480);
+
+            let grad1 = crc2.createLinearGradient(400, 200, 410, 780);
             grad1.addColorStop(0, "#FFFACD");
             grad1.addColorStop(0.5, "#F0E68C");
             grad1.addColorStop(1, "#BDB76B");
-            
+
             // ALternative gradients I tried out (first one still the best)
             /*let grad2 = crc2.createLinearGradient(440, 250, 450, 430);
             grad2.addColorStop(0, "#F2C5CA");
@@ -81,7 +92,7 @@ namespace Abschlussaufgabe {
             grad3.addColorStop(0, "#B5D3DB");
             grad3.addColorStop(0.5, "#5A8DAB");
             grad3.addColorStop(1, "#283143"); */
-            
+
             crc2.fillStyle = grad1;
             crc2.fill();
         }

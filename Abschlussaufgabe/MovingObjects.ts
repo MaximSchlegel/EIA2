@@ -32,5 +32,9 @@ namespace Abschlussaufgabe {
         mouseMove(mouseX: number, mouseY: number): void {
             // placeholder
         }
+
+        touchMove(touchX: number, touchY: number): void {
+            // placeholder
+        }
     }
 }

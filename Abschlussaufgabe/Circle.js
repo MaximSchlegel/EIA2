@@ -19,7 +19,7 @@ var Abschlussaufgabe;
             _super.call(this);
         }
         Circle.prototype.position = function () {
-            // Random radius of circles
+            // Random radius of circles with minimum and maximum radius
             this.r = Math.random() * 10 + 2;
             this.maxR = 80;
             this.minR = this.r;
@@ -45,17 +45,28 @@ var Abschlussaufgabe;
         Circle.prototype.mouseMove = function (mouseX, mouseY) {
             if (mouseX - this.x < 70 && mouseX - this.x > -70 && mouseY - this.y < 70 && mouseY - this.y > -70) {
                 if (this.r < this.maxR) {
-                    this.r += 1.85;
+                    this.r += 2;
                 }
             }
             else if (this.r > this.minR) {
-                this.r -= 1.85;
+                this.r -= 2;
+            }
+        };
+        // Interactivity with touch movement
+        Circle.prototype.touchMove = function (touchX, touchY) {
+            if (touchX - this.x < 70 && touchX - this.x > -70 && touchY - this.y < 70 && touchY - this.y > -70) {
+                if (this.r < this.maxR) {
+                    this.r += 2;
+                }
+            }
+            else if (this.r > this.minR) {
+                this.r -= 2;
             }
         };
         Circle.prototype.draw = function () {
             Abschlussaufgabe.crc2.beginPath();
             Abschlussaufgabe.crc2.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
-            var grad1 = Abschlussaufgabe.crc2.createLinearGradient(400, 300, 410, 480);
+            var grad1 = Abschlussaufgabe.crc2.createLinearGradient(400, 200, 410, 780);
             grad1.addColorStop(0, "#FFFACD");
             grad1.addColorStop(0.5, "#F0E68C");
             grad1.addColorStop(1, "#BDB76B");

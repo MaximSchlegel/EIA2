@@ -9,6 +9,7 @@ Hiermit versichere ich, dass ich diesen Code selber geschrieben habe. Er wurde n
 var Abschlussaufgabe;
 (function (Abschlussaufgabe) {
     window.addEventListener("load", init);
+    window.addEventListener("touchmove", touchMove);
     var objects = [];
     // Init function
     function init(_event) {
@@ -18,7 +19,7 @@ var Abschlussaufgabe;
         Abschlussaufgabe.crc2.canvas.width = window.innerWidth;
         Abschlussaufgabe.crc2.canvas.height = window.innerHeight;
         // Generate circles
-        for (var i = 0; i < 800; i++) {
+        for (var i = 0; i < 700; i++) {
             var circle = new Abschlussaufgabe.Circle();
             objects.push(circle);
         }
@@ -47,6 +48,20 @@ var Abschlussaufgabe;
         //console.log("X: " + mouseX);
         //console.log("Y: " + mouseY);
     });
+    // Track touch movement
+    function touchMove() {
+    }
+    /*window.addEventListener("touchmove", function(touchEvent) {
+        let touchX: number = event.screenX;
+        let touchY: number = event.screenY;
+        touchX = event.x;
+        touchY = event.y;
+        for (let i: number = 0; i < objects.length; i++) {
+            objects[i].mouseMove(touchX, touchY);
+        }
+        console.log("X: " + touchX);
+        console.log("Y: " + touchY);
+    });*/
     // Adjusts canvas even after resizing your window
     window.addEventListener("resize", function (event) {
         Abschlussaufgabe.crc2.canvas.width = window.innerWidth;

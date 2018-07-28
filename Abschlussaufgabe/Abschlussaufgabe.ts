@@ -9,6 +9,7 @@ Hiermit versichere ich, dass ich diesen Code selber geschrieben habe. Er wurde n
 
 namespace Abschlussaufgabe {
     window.addEventListener("load", init);
+    window.addEventListener("touchmove", touchMove);
     export let crc2: CanvasRenderingContext2D;
     let objects: MovingObjects[] = [];
 
@@ -22,7 +23,7 @@ namespace Abschlussaufgabe {
         crc2.canvas.height = window.innerHeight;
 
         // Generate circles
-        for (let i: number = 0; i < 800; i++) {
+        for (let i: number = 0; i < 700; i++) {
             let circle: Circle = new Circle();
             objects.push(circle);
         }
@@ -45,8 +46,8 @@ namespace Abschlussaufgabe {
 
     // Track mouse movement
     window.addEventListener("mousemove", function(event) {
-        var mouseX: number = event.screenX;
-        var mouseY: number = event.screenY;
+        let mouseX: number = event.screenX;
+        let mouseY: number = event.screenY;
         mouseX = event.x;
         mouseY = event.y;
         for (let i: number = 0; i < objects.length; i++) {
@@ -56,9 +57,22 @@ namespace Abschlussaufgabe {
         //console.log("Y: " + mouseY);
     });
 
+    // Track touch movement
+    window.addEventListener("touchmove", function(touchEvent) {
+        let touchX: number = event.screenX;
+        let touchY: number = event.screenY;
+        touchX = event.x;
+        touchY = event.y;
+        for (let i: number = 0; i < objects.length; i++) {
+            objects[i].mouseMove(touchX, touchY);
+        }
+        //console.log("X: " + touchX);
+        //console.log("Y: " + touchY);
+    });
+
     // Adjusts canvas even after resizing your window
     window.addEventListener("resize", function(event) {
-            crc2.canvas.width = window.innerWidth;
-            crc2.canvas.height = window.innerHeight;
-        });
+        crc2.canvas.width = window.innerWidth;
+        crc2.canvas.height = window.innerHeight;
+    });
 }
