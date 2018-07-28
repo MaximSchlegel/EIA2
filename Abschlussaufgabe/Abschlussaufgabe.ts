@@ -45,8 +45,8 @@ namespace Abschlussaufgabe {
 
     // Track mouse movement
     window.addEventListener("mousemove", function(event) {
-        let mouseX: number = event.screenX;
-        let mouseY: number = event.screenY;
+        var mouseX: number = event.screenX;
+        var mouseY: number = event.screenY;
         mouseX = event.x;
         mouseY = event.y;
         for (let i: number = 0; i < objects.length; i++) {
@@ -58,8 +58,8 @@ namespace Abschlussaufgabe {
 
     // Track touch movement
     window.addEventListener("touchmove", function(event) {
-        let touchX: number = event.screenX;
-        let touchY: number = event.screenY;
+        var touchX: number = event.screenX;
+        var touchY: number = event.screenY;
         touchX = event.x;
         touchY = event.y;
         for (let i: number = 0; i < objects.length; i++) {
