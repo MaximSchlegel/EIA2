@@ -61,9 +61,9 @@ namespace Abschlussaufgabe {
             }
         }
 
-        // Interactivity with touch movement
+        // Interactivity with touch movement (not working like intended)
         touchMove(touchX: number, touchY: number): void {
-            if (touchX - this.x < 70 && touchX - this.x > - 70 && touchY - this.y < 70 && touchY - this.y > - 70) {
+            if (touchX - this.x < 80 && touchX - this.x > - 80 && touchY - this.y < 80 && touchY - this.y > - 80) {
                 if (this.r < this.maxR) {
                     this.r += 2;
                 }
@@ -91,7 +91,7 @@ namespace Abschlussaufgabe {
             let grad3 = crc2.createLinearGradient(640, 150, 650, 700);
             grad3.addColorStop(0, "#B5D3DB");
             grad3.addColorStop(0.5, "#5A8DAB");
-            grad3.addColorStop(1, "#283143"); */
+            grad3.addColorStop(1, "#283143");*/
 
             crc2.fillStyle = grad1;
             crc2.fill();

@@ -11,11 +11,11 @@ namespace Abschlussaufgabe {
     window.addEventListener("load", init);
     export let crc2: CanvasRenderingContext2D;
     let objects: MovingObjects[] = [];
-    //  let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
+    
 
     // Init function
     function init(_event: Event): void {
-        let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
+        var canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
         crc2 = canvas.getContext("2d");
 
         // Canvas size = Window size
@@ -44,15 +44,15 @@ namespace Abschlussaufgabe {
 
         // Track touch movement
         canvas.addEventListener("touchmove", function(event) {
-            var touchX: number = event.changedTouches[0].screenX;
-            var touchY: number = event.changedTouches[0].screenY;
-            //touchX = event.changedTouches[0].x;
-            //touchY = event.changedTouches[0].y;
+            var touchX: number = event.touches[0].screenX;
+            var touchY: number = event.touches[0].screenY;
+            //touchX = event.touches[0].x;
+            //touchY = event.touches[0].y;
             for (let i: number = 0; i < objects.length; i++) {
                 objects[i].touchMove(touchX, touchY);
             }
-            //console.log("X: " + mouseX);
-            //console.log("Y: " + mouseY);
+            console.log("X: " + touchX);
+            console.log("Y: " + touchY);
         });
 
         // Animate Circles

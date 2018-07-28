@@ -10,7 +10,6 @@ var Abschlussaufgabe;
 (function (Abschlussaufgabe) {
     window.addEventListener("load", init);
     var objects = [];
-    //  let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
     // Init function
     function init(_event) {
         var canvas = document.getElementsByTagName("canvas")[0];
@@ -38,15 +37,15 @@ var Abschlussaufgabe;
         });
         // Track touch movement
         canvas.addEventListener("touchmove", function (event) {
-            var touchX = event.changedTouches[0].screenX;
-            var touchY = event.changedTouches[0].screenY;
-            //touchX = event.changedTouches[0].x;
-            //touchY = event.changedTouches[0].y;
+            var touchX = event.touches[0].screenX;
+            var touchY = event.touches[0].screenY;
+            //touchX = event.touches[0].x;
+            //touchY = event.touches[0].y;
             for (var i = 0; i < objects.length; i++) {
                 objects[i].touchMove(touchX, touchY);
             }
-            //console.log("X: " + mouseX);
-            //console.log("Y: " + mouseY);
+            console.log("X: " + touchX);
+            console.log("Y: " + touchY);
         });
         // Animate Circles
         function animate() {
