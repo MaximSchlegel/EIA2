@@ -9,7 +9,6 @@ Hiermit versichere ich, dass ich diesen Code selber geschrieben habe. Er wurde n
 
 namespace Abschlussaufgabe {
     window.addEventListener("load", init);
-    window.addEventListener("touchmove", touchMove);
     export let crc2: CanvasRenderingContext2D;
     let objects: MovingObjects[] = [];
 
