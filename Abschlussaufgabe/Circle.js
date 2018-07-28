@@ -19,6 +19,7 @@ var Abschlussaufgabe;
             _super.call(this);
         }
         Circle.prototype.position = function () {
+            // Random radius of circles
             this.r = Math.random() * 10 + 2;
             this.maxR = 80;
             this.minR = this.r;
@@ -58,14 +59,16 @@ var Abschlussaufgabe;
             grad1.addColorStop(0, "#FFFACD");
             grad1.addColorStop(0.5, "#F0E68C");
             grad1.addColorStop(1, "#BDB76B");
-            var grad2 = Abschlussaufgabe.crc2.createLinearGradient(440, 250, 450, 430);
+            // ALternative gradients I tried out (first one still the best)
+            /*let grad2 = crc2.createLinearGradient(440, 250, 450, 430);
             grad2.addColorStop(0, "#F2C5CA");
             grad2.addColorStop(0.5, "#F1A9BB");
             grad2.addColorStop(1, "#DB86A9");
-            var grad3 = Abschlussaufgabe.crc2.createLinearGradient(640, 150, 650, 700);
+            
+            let grad3 = crc2.createLinearGradient(640, 150, 650, 700);
             grad3.addColorStop(0, "#B5D3DB");
             grad3.addColorStop(0.5, "#5A8DAB");
-            grad3.addColorStop(1, "#283143");
+            grad3.addColorStop(1, "#283143"); */
             Abschlussaufgabe.crc2.fillStyle = grad1;
             Abschlussaufgabe.crc2.fill();
         };

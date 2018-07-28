@@ -42,7 +42,7 @@ namespace Abschlussaufgabe {
             objects[i].draw();
         }
     }
-    
+
     // Track mouse movement
     window.addEventListener("mousemove", function(event) {
         var mouseX: number = event.screenX;
@@ -55,10 +55,10 @@ namespace Abschlussaufgabe {
         //console.log("X: " + mouseX);
         //console.log("Y: " + mouseY);
     });
-    
+
     // Adjusts canvas even after resizing your window
     window.addEventListener("resize", function(event) {
-        crc2.canvas.width = window.innerWidth;
-        crc2.canvas.height = window.innerHeight;
-    });
+            crc2.canvas.width = window.innerWidth;
+            crc2.canvas.height = window.innerHeight;
+        });
 }

@@ -22,12 +22,15 @@ namespace Abschlussaufgabe {
         }
 
         position(): void {
+            // Random radius of circles
             this.r = Math.random() * 10 + 2;
             this.maxR = 80;
             this.minR = this.r;
+            
             // Circles spawn inside the canvas and can't spawn on the border
             this.x = Math.random() * (innerWidth - this.r * 2) + this.r;
             this.y = Math.random() * (innerHeight - this.r * 2) + this.r;
+            
             // Change velocity of circles
             this.dx = (Math.random() - 0.5) * 3;
             this.dy = (Math.random() - 0.5) * 3;
@@ -68,7 +71,8 @@ namespace Abschlussaufgabe {
             grad1.addColorStop(0.5, "#F0E68C");
             grad1.addColorStop(1, "#BDB76B");
             
-            let grad2 = crc2.createLinearGradient(440, 250, 450, 430);
+            // ALternative gradients I tried out (first one still the best)
+            /*let grad2 = crc2.createLinearGradient(440, 250, 450, 430);
             grad2.addColorStop(0, "#F2C5CA");
             grad2.addColorStop(0.5, "#F1A9BB");
             grad2.addColorStop(1, "#DB86A9");
@@ -76,7 +80,7 @@ namespace Abschlussaufgabe {
             let grad3 = crc2.createLinearGradient(640, 150, 650, 700);
             grad3.addColorStop(0, "#B5D3DB");
             grad3.addColorStop(0.5, "#5A8DAB");
-            grad3.addColorStop(1, "#283143");
+            grad3.addColorStop(1, "#283143"); */
             
             crc2.fillStyle = grad1;
             crc2.fill();
