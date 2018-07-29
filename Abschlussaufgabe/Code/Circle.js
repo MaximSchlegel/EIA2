@@ -52,9 +52,9 @@ var Abschlussaufgabe;
                 this.r -= 2;
             }
         };
-        // Interactivity with touch movement: Circle get bigger if close to touchpoint
+        // Interactivity with touch movement: Circle get bigger if close to the touchpoint
         Circle.prototype.touchMove = function (touchX, touchY) {
-            if (touchX - this.x < 120 && touchX - this.x > -120 && touchY - this.y < 120 && touchY - this.y > -120) {
+            if (touchX - this.x < 200 && touchX - this.x > -200 && touchY - this.y < 200 && touchY - this.y > -200) {
                 if (this.r < this.maxR) {
                     this.r += 2;
                 }
