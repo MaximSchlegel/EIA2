@@ -61,7 +61,7 @@ namespace Abschlussaufgabe {
             }
         }
 
-        // Interactivity with touch movement
+        // Interactivity with touch movement: Circle get bigger if close to touchpoint
         touchMove(touchX: number, touchY: number): void {
             if (touchX - this.x < 80 && touchX - this.x > - 80 && touchY - this.y < 80 && touchY - this.y > - 80) {
                 if (this.r < this.maxR) {
@@ -72,7 +72,8 @@ namespace Abschlussaufgabe {
                 this.r -= 2;
             }
         }
-
+        
+        // Draw function for circle
         draw(): void {
             crc2.beginPath();
             crc2.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
