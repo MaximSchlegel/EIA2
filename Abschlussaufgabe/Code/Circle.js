@@ -54,7 +54,7 @@ var Abschlussaufgabe;
         };
         // Interactivity with touch movement: Circle get bigger if close to touchpoint
         Circle.prototype.touchMove = function (touchX, touchY) {
-            if (touchX - this.x < 80 && touchX - this.x > -80 && touchY - this.y < 80 && touchY - this.y > -80) {
+            if (touchX - this.x < 120 && touchX - this.x > -120 && touchY - this.y < 120 && touchY - this.y > -120) {
                 if (this.r < this.maxR) {
                     this.r += 2;
                 }

@@ -48,7 +48,7 @@ namespace Abschlussaufgabe {
             this.x += this.dx;
             this.y += this.dy;
         }
-
+ 
         // Interactivity with mouse movement: Circles get bigger if close to the cursor
         mouseMove(mouseX: number, mouseY: number): void {
             if (mouseX - this.x < 70 && mouseX - this.x > - 70 && mouseY - this.y < 70 && mouseY - this.y > - 70) {
@@ -63,7 +63,7 @@ namespace Abschlussaufgabe {
 
         // Interactivity with touch movement: Circle get bigger if close to touchpoint
         touchMove(touchX: number, touchY: number): void {
-            if (touchX - this.x < 80 && touchX - this.x > - 80 && touchY - this.y < 80 && touchY - this.y > - 80) {
+            if (touchX - this.x < 120 && touchX - this.x > - 120 && touchY - this.y < 120 && touchY - this.y > - 120) {
                 if (this.r < this.maxR) {
                     this.r += 2;
                 }

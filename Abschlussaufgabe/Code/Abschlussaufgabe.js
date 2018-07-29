@@ -23,7 +23,7 @@ var Abschlussaufgabe;
             objects.push(circle);
         }
         animate();
-        // Track mouse movement and put coordinates in variable
+        // Track mouse movement
         canvas.addEventListener("mousemove", function (event) {
             var mouseX = event.pageX;
             var mouseY = event.pageY;

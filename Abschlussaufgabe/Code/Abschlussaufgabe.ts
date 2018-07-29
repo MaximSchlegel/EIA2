@@ -29,7 +29,7 @@ namespace Abschlussaufgabe {
         }
         animate();
 
-        // Track mouse movement and put coordinates in variable
+        // Track mouse movement
         canvas.addEventListener("mousemove", function(event) {
             var mouseX: number = event.pageX;
             var mouseY: number = event.pageY;
