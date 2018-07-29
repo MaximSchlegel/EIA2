@@ -61,7 +61,7 @@ namespace Abschlussaufgabe {
             }
         }
 
-        // Interactivity with touch movement (not working like intended -> seems to work a bit better with lower resolution)
+        // Interactivity with touch movement
         touchMove(touchX: number, touchY: number): void {
             if (touchX - this.x < 80 && touchX - this.x > - 80 && touchY - this.y < 80 && touchY - this.y > - 80) {
                 if (this.r < this.maxR) {

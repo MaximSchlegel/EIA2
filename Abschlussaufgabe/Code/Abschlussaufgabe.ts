@@ -11,7 +11,7 @@ namespace Abschlussaufgabe {
     window.addEventListener("load", init);
     export let crc2: CanvasRenderingContext2D;
     let objects: MovingObjects[] = [];
-    
+
 
     // Init function
     function init(_event: Event): void {
@@ -31,8 +31,8 @@ namespace Abschlussaufgabe {
 
         // Track mouse movement
         canvas.addEventListener("mousemove", function(event) {
-            var mouseX: number = event.screenX;
-            var mouseY: number = event.screenY;
+            var mouseX: number = event.pageX;
+            var mouseY: number = event.pageY;
             mouseX = event.x;
             mouseY = event.y;
             for (let i: number = 0; i < objects.length; i++) {
@@ -44,10 +44,8 @@ namespace Abschlussaufgabe {
 
         // Track touch movement
         canvas.addEventListener("touchmove", function(event) {
-            var touchX: number = event.touches[0].screenX;
-            var touchY: number = event.touches[0].screenY;
-            //touchX = event.touches[0].x;
-            //touchY = event.touches[0].y;
+            var touchX: number = event.touches[0].pageX;
+            var touchY: number = event.touches[0].pageY;
             for (let i: number = 0; i < objects.length; i++) {
                 objects[i].touchMove(touchX, touchY);
             }
@@ -68,7 +66,7 @@ namespace Abschlussaufgabe {
                 objects[i].draw();
             }
         }
-        
+
         // Adjusts canvas even after resizing your window
         window.addEventListener("resize", function(event) {
             crc2.canvas.width = window.innerWidth;

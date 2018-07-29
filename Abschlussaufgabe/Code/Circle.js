@@ -52,7 +52,7 @@ var Abschlussaufgabe;
                 this.r -= 2;
             }
         };
-        // Interactivity with touch movement (not working like intended -> seems to work a bit better with lower resolution)
+        // Interactivity with touch movement
         Circle.prototype.touchMove = function (touchX, touchY) {
             if (touchX - this.x < 80 && touchX - this.x > -80 && touchY - this.y < 80 && touchY - this.y > -80) {
                 if (this.r < this.maxR) {

@@ -25,8 +25,8 @@ var Abschlussaufgabe;
         animate();
         // Track mouse movement
         canvas.addEventListener("mousemove", function (event) {
-            var mouseX = event.screenX;
-            var mouseY = event.screenY;
+            var mouseX = event.pageX;
+            var mouseY = event.pageY;
             mouseX = event.x;
             mouseY = event.y;
             for (var i = 0; i < objects.length; i++) {
@@ -37,10 +37,8 @@ var Abschlussaufgabe;
         });
         // Track touch movement
         canvas.addEventListener("touchmove", function (event) {
-            var touchX = event.touches[0].screenX;
-            var touchY = event.touches[0].screenY;
-            //touchX = event.touches[0].x;
-            //touchY = event.touches[0].y;
+            var touchX = event.touches[0].pageX;
+            var touchY = event.touches[0].pageY;
             for (var i = 0; i < objects.length; i++) {
                 objects[i].touchMove(touchX, touchY);
             }
